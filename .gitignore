@@ -1,0 +1,19 @@
+# Blender backup files
+*.blend1
+*.blend2
+*.blend@
+
+# Python caches
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local credentials and environment
+.env
+.env.*
+!.env.example
+
+# Local scratch and OS files
+work/
+.DS_Store
+Thumbs.db
