@@ -1,6 +1,6 @@
 # Scenario 001: Idle to full-body ragdoll
 
-Status: starting fixture prepared and inspected. Generator behavior is **not run** because no generator exists. This is development material, not a held-out test.
+Status: starting fixture and scenario instructions reviewed and accepted by the user on 2026-09-06. Generator behavior is **not run** because no generator exists. This is development material, not a held-out test.
 
 ## Purpose
 
@@ -15,7 +15,7 @@ The local starting file is `work/scenarios/scenario-001/start.blend`, relative t
 | Blender | 5.1.2 |
 | Rig / mesh | Human Armature / Human_Mesh; 41 bones |
 | Animation | Existing Idle action, preserved with all other source actions |
-| Units | Metric; 1 Blender unit = 1 metre |
+| Units | Metric; 1 Blender unit = 1 meter |
 | Character placement | 1.8 m evaluated mesh height at frame 1; lowest vertex 0.08 m above floor |
 | Placement method | ScenarioPlacement parent, uniform scale 0.343518702904352; original rig local transforms retained |
 | Floor | ScenarioFloor, 6 m by 6 m by 0.2 m; top at Z=0; passive box collider |
@@ -57,7 +57,7 @@ Do not press Bake simulation: baking/export has a separate task. The fixture has
 
 Use [the project acceptance criteria](../../../docs/acceptance.md), especially GEN-01 through GEN-08. Every check must have pass/fail/not-run status and supporting evidence. Fixture preparation results must not be counted as generator results.
 
-Candidate numerical limits for review before the first generator run:
+Initial numerical limits accepted with the scenario review on 2026-09-06:
 
 - No non-finite position, rotation, or velocity at any sampled frame.
 - Before the blend begins, animated bone positions differ from baseline by at most 1 mm and rotations by at most 0.1 degrees.
@@ -65,7 +65,7 @@ Candidate numerical limits for review before the first generator run:
 - Connected joint anchors remain within 1 cm; collider penetration below the floor top remains within 1 cm. Visual mesh penetration is reviewed separately from collider penetration.
 - Throughout frames 193–240, each physical body's linear speed is at most 0.05 m/s and angular speed at most 0.1 rad/s, or it is sleeping.
 
-These are proposed initial tolerances, not user-approved or empirically validated limits. Agree them before grading an implementation; do not relax them after a failure merely to pass it. User review must still assess motion quality, persistent jitter, implausible movement, and unintended pose jumps during the blend.
+These are user-accepted initial tolerances, not evidence of a passing implementation. Do not relax them after a failure merely to pass it. User review must still assess motion quality, persistent jitter, implausible movement, and unintended pose jumps during the blend.
 
 Required future run artifacts: complete playback recording, generated scene, tool output, body/joint mapping, frame-indexed measurements, source-preservation comparison, check statuses, and user feedback. Record incomplete evidence as not-run or incomplete, never a pass.
 

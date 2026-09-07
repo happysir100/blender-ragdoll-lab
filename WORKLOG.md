@@ -28,14 +28,15 @@ Canonical references:
 
 ## Active workstreams
 
-- First scenario preparation — completed on codex/first-test-scenario. Local start.blend is saved under work/scenarios/scenario-001; source rig-001 is unchanged. Metadata, procedure, and preparation evidence: dataset/tasks/task-0001/. All 240 baseline animation frames evaluated; fresh-load checks and two preview inspections passed. Packed both textures in the copy. Generator checks remain not run; numerical acceptance limits and user scene review are pending.
+- First scenario preparation — completed on codex/first-test-scenario. Local start.blend is saved under work/scenarios/scenario-001; source rig-001 is unchanged. Metadata, procedure, and preparation evidence: dataset/tasks/task-0001/. All 240 baseline animation frames evaluated; fresh-load checks and two preview inspections passed. Packed both textures in the copy. Generator checks remain not run; the user accepted the scene, schedule, and initial numerical limits on 2026-09-06.
 - Rig preparation — source selection and first fixture preparation complete. User-cleaned work/rig-001 remains intact. The scenario copy includes packed textures, a 1.8 m placement parent, passive floor, and Idle baseline. See docs/rig-source.md for original provenance and dataset/tasks/task-0001/input/manifest.json for the frozen fixture hash. No further source edits are required for this scenario.
-- Goal and dataset definition — owner: primary assistant with user; status: active; may edit documentation only pending implementation approval; branch: codex/first-test-scenario. Latest checkpoint: first scenario input and task record prepared. Next action: user reviews the scene, scenario schedule, and candidate limits; then define a concrete generator implementation plan. Broader rig support, export format, finger/toe articulation, and binary distribution remain open. No delegated work is active.
+- Goal and dataset definition — owner: primary assistant with user; status: active; may edit documentation only pending implementation approval; branch: codex/first-test-scenario. Latest checkpoint: user accepted the scenario; docs/generator-plan.md and planned run-001 capture the proposed file-level implementation. Next action: await explicit code approval for that proposal. Broader rig support, export format, finger/toe articulation, and binary distribution remain open. No delegated work is active.
 
 Planning documentation and agent instructions were committed as 11d7ee6 and successfully pushed to origin/main. The checkpoint includes the accumulated specification, dataset plan, rig provenance, and work log. Binary assets under work/ remain local and ignored.
 
 ## Decisions
 
+- User reviewed the starting scene and scenario instructions and accepted them on 2026-09-06 ("Ok I've reviewed them, looks good"). Treat the documented schedule and initial measurement limits as the baseline for the first attempt. This accepts the test, not generator implementation. Prepare the file-level plan and await code-scope approval before implementation.
 - User requires whole-body physics. The spec and GEN-02 now require coverage of pelvis, torso, neck/head, both arms/hands, and both legs/feet, with fingers/toes following the simulated body. Individual finger/toe articulation and exact bone-to-body mapping remain design details; do not assume every helper/end bone needs its own rigid body. This is a scope clarification, not implementation approval.
 - User selected blending by default. Updated docs/first-tool.md and GEN-04 in docs/acceptance.md to describe continuous animation-to-physics influence. This specifies control behavior, not an initial numeric value, automatic keyframe creation, or an implementation architecture. No tool code has been written.
 
@@ -51,7 +52,7 @@ Planning documentation and agent instructions were committed as 11d7ee6 and succ
 
 ## Known failures and risks
 
-- User corrected the material texture path; read-only inspection confirmed it resolves. One older dark-skin image datablock remains unresolved but is not used by the inspected material. Current scene hash and evidence are recorded in docs/rig-source.md; previous unchanged-source hash is historical. Baseline animation has now been sampled across 240 frames and spot-checked in scenario previews; full human playback review remains pending.
+- User corrected the material texture path; read-only inspection confirmed it resolves. One older dark-skin image datablock remains unresolved but is not used by the inspected material. Current scene hash and evidence are recorded in docs/rig-source.md; previous unchanged-source hash is historical. Baseline animation has now been sampled across 240 frames and spot-checked in scenario previews; the user has now reviewed and accepted the starting scene.
 
 - The tool scope document now contains the user's requirements. The demonstration template remains empty, and detailed acceptance criteria are still pending.
 - `AGENTS.md` references `Docs/Architecture.md`, but no architecture document currently exists. Establish the relevant design before changing system responsibilities.
@@ -59,10 +60,10 @@ Planning documentation and agent instructions were committed as 11d7ee6 and succ
 
 ## Ordered next work
 
-Immediate checkpoint: review dataset/tasks/task-0001/scenario.md and the prepared local scene. Its fixed schedule is blend 0 at frames 1/24 and blend 1 at 48/240 with linear interpolation, at 24 fps. Agree candidate measurement limits before grading, then obtain approval for a concrete generator code plan. Baking remains a separate subsequent task. The first implementation attempt has not started.
+Immediate checkpoint: obtain code-scope approval for docs/generator-plan.md. The user accepted scenario-001 and its initial limits; planned run-001 is opened with implementation still not started. The proposal uses 20 bodies, 19 joints, a separate animation reference, and keyable constraint blending. After approval, create a dedicated generator branch from the reviewed scenario checkpoint. Baking remains a separate subsequent task. The first implementation attempt has not started.
 
 1. Review [docs/dataset-structure.md](docs/dataset-structure.md), now containing the proposed repository layout and capture process. Start with one complete example; the proposed next pilot is six independent rig families split 3/2/1 across training/validation/test. These counts and folders are proposals, not approved implementation or evidence of reliability. Reference construction can be collaborative; held-out solutions must be outside the evaluated workspace.
-2. Review the prepared scenario and candidate limits; determine the exact full-body bone mapping and first generator implementation scope. The animation-to-physics schedule is now recorded.
+2. Resolve approval of the proposed body mapping, constraint-based binding, and file-level generator scope in docs/generator-plan.md. Do not infer code approval from acceptance of the scenario.
 3. Reconcile the README and scope document with the agreed dataset-first objective; define the smallest tool workflow and acceptance checks.
 4. Fill `templates/workflow.md` with the reproducibility and validation fields, including starting inputs, instructions, reviewed outcomes, corrections, and evidence. Include task IDs, asset-family IDs, exact environment and code revision, review status, and links to evidence. Record code-development examples as well as resulting Blender scenes.
 5. Complete and independently reproduce one pilot example before expanding the collection. Proposed pilot: add a ragdoll to one agreed rig, exercise the agreed keyable control, explicitly bake through the separate button, and verify independent animation playback and the agreed export result.
@@ -71,6 +72,8 @@ Immediate checkpoint: review dataset/tasks/task-0001/scenario.md and the prepare
 These are pending planning steps, not authorization to start implementation.
 
 ## Integrated checkpoints
+
+- Scenario acceptance: user reviewed the scene/instructions and approved them on 2026-09-06. Recorded acceptance in task metadata and scenario.md, preserving the user edit from metre to meter. Opened run-001 as awaiting code approval and authored docs/generator-plan.md. No implementation files have been created.
 
 - Scenario-001 prepared: local input scene, task metadata, source/input hashes, fixed animation/floor settings, and documented run procedure. Blender 5.1.2 fresh-load checks passed; all 240 baseline frames had finite geometry and no floor intersection. Seven pose samples and hashes retained; frames 1/120 visually inspected. No ragdoll exists yet. See dataset/tasks/task-0001/evidence/. Binary input remains local pending a storage decision.
 
