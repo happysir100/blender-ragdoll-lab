@@ -6,8 +6,8 @@
   "scenario_id": "scenario-001",
   "asset_family_id": "quaternius-animated-human",
   "split": "development",
-  "status": "scenario_accepted",
-  "implementation_status": "not_started",
+  "status": "implementation_under_review",
+  "implementation_status": "implemented_validation_failed",
   "base_revision": "c18457f",
   "specification": "docs/first-tool.md",
   "acceptance": "docs/acceptance.md",
@@ -36,5 +36,5 @@
     "run-001"
   ],
   "user_acceptance": "scenario_accepted_2026-09-06",
-  "generator_result": "not_run"
+  "generator_result": "failed_accepted_scenario_diagnostic_pass_pending_review"
 }

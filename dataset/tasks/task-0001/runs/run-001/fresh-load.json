@@ -1,0 +1,20 @@
+{
+  "run-001": {
+    "fresh_load_frames": 240,
+    "maximum_body_position_difference_m": 0.0,
+    "release_schedule_matches": true,
+    "passed": true
+  },
+  "diagnostic-high-accuracy": {
+    "fresh_load_frames": 240,
+    "maximum_body_position_difference_m": 0.0,
+    "release_schedule_matches": true,
+    "passed": true
+  },
+  "package": {
+    "path": "work\\builds\\ragdoll_lab-0.1.0.zip",
+    "sha256": "7721acb591b3f6dd5aa14b4b6bf04a6ceb5a8456164a07ef01e35694d475b3c7",
+    "source_files": 6,
+    "syntax_compile": "passed"
+  }
+}

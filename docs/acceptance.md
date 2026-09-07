@@ -14,7 +14,7 @@ Before the first attempt, record the exact starting scene hash, Blender version,
 
 Proposed first scenario: the character begins in the agreed pose above a floor, physics takes over at an agreed frame, and the character falls and settles. An existing-animation-to-physics scenario checks preservation and transfer separately. The user selected continuous blending as the default control. Use 0 for animation, 1 for full ragdoll, and intermediate values for mixed influence. The initial value, detailed frame schedule, and interpolation remain to be defined.
 
-The first concrete development fixture is now [scenario-001](../dataset/tasks/task-0001/scenario.md): Idle animation at 24 fps, blend 0 through frame 24, a linear transition to 1 at frame 48, and observation through frame 240. These are test-scenario settings, not default keyframes automatically added by the product. Candidate numerical limits are documented there for review before the first generator run.
+The accepted development fixture is [scenario-001](../dataset/tasks/task-0001/scenario.md): Idle animation at 24 fps, blend 0 through frame 24, a linear transition to 1 at frame 48, and observation through frame 240. These are test-scenario settings, not default keyframes automatically added by the product. The user accepted its numerical limits on 2026-09-06. The first implementation [fails three automated checks](solver-resolution-findings.md); the higher-accuracy diagnostic is not an accepted pass. Visual transition issues and user review remain outstanding.
 
 ## Proposed checks
 
@@ -29,7 +29,7 @@ The first concrete development fixture is now [scenario-001](../dataset/tasks/ta
 | GEN-07 | Generated bodies and joints are named and organized so the user can inspect and adjust them. | User review against recorded naming/organization preferences. |
 | GEN-08 | Generating does not bake or overwrite an animation action. | Before/after action inventory and content comparison. |
 
-Invalid selections and repeated Generate Ragdoll presses need explicit behavior before implementation: agree whether to reject, replace, or update an existing setup. These should become additional cases rather than hidden assumptions.
+The approved implementation rejects invalid selections and duplicate generation without changing the scene. Run-001 also injects a late generation failure to check rollback of owned data and source action restoration.
 
 ## Human review and grading
 

@@ -74,7 +74,7 @@ Required future run artifacts: complete playback recording, generated scene, too
 - [preparation.json](evidence/preparation.json): all 240 baseline frames evaluated with finite mesh positions; minimum baseline floor clearance about 0.0799 m; seven representative skeletal samples retained.
 - [fresh-load.json](evidence/fresh-load.json): saved scene reopened with the expected settings, selection, packed textures, Idle action, no active physics bodies, and no ragdoll joints. Sampled poses differ over time.
 - Neutral material previews of frames 1 and 120 were visually inspected. This was a spot check of baseline deformation, not a full human playback review or a material-fidelity test.
-- The original user-edited rig hash is unchanged. No generator attempt has started.
+- The original user-edited rig hash is unchanged. Generator attempt [run-001](runs/run-001/workflow.md) now exists: the accepted fixture fails three checks; a separate higher-accuracy diagnostic passes numerical checks but is not accepted. See [findings](../../../docs/solver-resolution-findings.md) for visual issues and the proposed input revision.
 
 ## Manual reconstruction recipe
 

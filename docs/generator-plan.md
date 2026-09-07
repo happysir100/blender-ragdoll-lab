@@ -1,6 +1,6 @@
 # Generate Ragdoll — first implementation proposal
 
-Status: awaiting explicit code-scope approval. The user has accepted scenario-001, not this implementation. No Python files in this plan exist yet.
+Status: code scope explicitly approved by the user on 2026-09-06 ("approved"). Implemented on `codex/generate-ragdoll`; the accepted scenario currently fails three checks. See [solver-resolution-findings.md](solver-resolution-findings.md). Approval of implementation scope does not constitute acceptance of its output.
 
 ## Intended behavior
 
@@ -22,7 +22,7 @@ Blender 5.1.2, scenario-001: 41 bones, no existing pose-bone constraints, an act
 - LeftUpLeg, LeftLeg, LeftFoot.
 - RightUpLeg, RightLeg, RightFoot.
 
-The remaining 21 bones are finger/thumb segments, toe segments/end bones, and HeadTop_End. They follow their nearest physical ancestor with appropriate offsets; no independently simulated fingers/toes are proposed in this increment. At full ragdoll they must not continue independent source animation. This mapping needs approval as part of the implementation scope.
+The remaining 21 bones are finger/thumb segments, toe segments/end bones, and HeadTop_End. They follow their nearest physical ancestor with appropriate offsets; no independently simulated fingers/toes are included in this approved increment. At full ragdoll they must not continue independent source animation.
 
 ## Use Blender's existing systems
 
@@ -32,7 +32,7 @@ Use an owned animation-reference armature to evaluate source action/NLA poses in
 
 The custom layer orchestrates authoring, mapping, ownership, and the blend; Blender performs the rigid-body simulation and constraint evaluation. No new dependency or custom physics solver is proposed. Blender 5.1.2 runtime introspection confirms the kinematic property supports animation control and constraints expose influence. The Copy Transforms reference is https://docs.blender.org/manual/en/4.5/animation/constraints/transform/copy_transforms.html; runtime validation on 5.1.2 remains required.
 
-This replaces the spec's informal wording about parenting bones directly to physics meshes with a proposed constraint-based binding. It is an architectural proposal for approval, not a silently accepted change to the spec.
+The approved constraint-based binding replaces the spec's informal wording about parenting bones directly to physics meshes.
 
 ## File-level scope
 

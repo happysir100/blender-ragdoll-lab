@@ -4,81 +4,45 @@ Last reconciled: 2026-09-06 (America/New_York).
 
 ## Current milestone
 
-The primary objective is to create training and validation data that captures effective workflows, the user's working preferences, and reviewed examples useful to the wider game-development community. Developing a Blender tool supplies the tasks and evidence for the dataset. The intended training mechanism remains unspecified; collecting examples does not itself retrain a model.
+Build reviewed training/validation examples through development of a Blender ragdoll tool. Data collection does not itself retrain a model. Complete one reproducible, reviewed example before expanding to more rig families.
 
-The user-provided prior conversation confirms the first tool is a Blender-only ragdoll generator, consistent with [README.md](README.md). The repository has a prepared first development scenario and metadata, but no working add-on or completed training examples.
+The user approved the first Generate Ragdoll implementation scope on 2026-09-06. The generator now exists, but the accepted 240-frame scenario fails three automated checks and the motion/workflow still needs human review. The full product also requires a separate Bake simulation button and exportable baked animation; baking/export is a subsequent task, not implemented in this increment.
 
-Confirmed tool workflow: the user selects an existing rig, adds a ragdoll physics simulation, keys its control over time, and bakes the simulation back onto the rig to produce exportable ragdoll animations. Creating a rig from an unrigged mesh is not part of the stated workflow.
-
-Baking must be triggered by its own button, separate from adding the ragdoll simulation. The user can set up and adjust the simulation before explicitly baking its motion onto the rig.
-
-The user-authored spec now requires a Blender sidebar tab with two buttons: Generate Ragdoll and Bake simulation. Generation uses the selected rig hierarchy to create a physics mesh that drives the bones and character; the spec describes parenting bones to that mesh. This is recorded as requested behavior/structure, not a technically validated implementation. Simulation control must be a keyable attribute on the rig.
-
-The user selected continuous blending between animation and ragdoll as the default keyable control. The spec uses 0 for animation, 1 for full ragdoll, and intermediate values for mixed influence. Initial value, transition duration, supported rig types, export format, and detailed acceptance tolerances remain to be defined. Reproducible starting states and observed validation outcomes are required for reviewed workflows. The tool remains Blender-only; exportable baked animation is explicitly required, while integration with another application has not been requested.
-
-Canonical references:
-
-- [README.md](README.md): project objective, goals, and data handling.
-- [CONTRIBUTING.md](CONTRIBUTING.md): contribution and example quality requirements.
-- [docs/first-tool.md](docs/first-tool.md): user-authored tool specification, including sidebar placement, generation, keyable rig control, and separate baking.
-- [docs/acceptance.md](docs/acceptance.md): proposed first-task success criteria, evidence requirements, and outstanding decisions; not yet approved or executed.
-- [templates/workflow.md](templates/workflow.md): intended demonstration template; currently empty.
-- [AGENTS.md](AGENTS.md): agent workflow instructions.
-- [docs/dataset-structure.md](docs/dataset-structure.md): proposed repository layout, record contents, pilot size, review process, and held-out evaluation boundaries.
+Canonical references: [tool specification](docs/first-tool.md), [approved generator plan](docs/generator-plan.md), [architecture](docs/architecture.md), [acceptance](docs/acceptance.md), [scenario-001](dataset/tasks/task-0001/scenario.md), [dataset structure](docs/dataset-structure.md), [run-001](dataset/tasks/task-0001/runs/run-001/workflow.md).
 
 ## Active workstreams
 
-- First scenario preparation — completed on codex/first-test-scenario. Local start.blend is saved under work/scenarios/scenario-001; source rig-001 is unchanged. Metadata, procedure, and preparation evidence: dataset/tasks/task-0001/. All 240 baseline animation frames evaluated; fresh-load checks and two preview inspections passed. Packed both textures in the copy. Generator checks remain not run; the user accepted the scene, schedule, and initial numerical limits on 2026-09-06.
-- Rig preparation — source selection and first fixture preparation complete. User-cleaned work/rig-001 remains intact. The scenario copy includes packed textures, a 1.8 m placement parent, passive floor, and Idle baseline. See docs/rig-source.md for original provenance and dataset/tasks/task-0001/input/manifest.json for the frozen fixture hash. No further source edits are required for this scenario.
-- Goal and dataset definition — owner: primary assistant with user; status: active; may edit documentation only pending implementation approval; branch: codex/first-test-scenario. Latest checkpoint: user accepted the scenario; docs/generator-plan.md and planned run-001 capture the proposed file-level implementation. Next action: await explicit code approval for that proposal. Broader rig support, export format, finger/toe articulation, and binary distribution remain open. No delegated work is active.
-
-Planning documentation and agent instructions were committed as 11d7ee6 and successfully pushed to origin/main. The checkpoint includes the accumulated specification, dataset plan, rig provenance, and work log. Binary assets under work/ remain local and ignored.
+- Generator implementation and validation — owner: primary assistant; status: validating; may edit the approved six add-on modules, scenario runner, supporting documentation and run evidence. Branch: `codex/generate-ragdoll`, based on accepted scenario checkpoint `159e06245954dfa560c9ffca144054e1f2a68524`. Implemented 20 bodies, 19 joints, 41 bone targets, keyable blend, duplicate/invalid-input rejection and failure rollback. Accepted fixture at 10 substeps/20 solver iterations fails tracking, penetration and settling. A separate 30/100 diagnostic passes measured limits; it is not an accepted-scenario pass. Next checkpoint: retain final reports/playback, review visual behavior, and request approval before revising frozen scenario settings. No agents are delegated; no merge or dependency change is authorized.
+- Dataset capture — owner: primary assistant with user; status: active; may edit documentation and run records. Same branch. Preserve failed experiments, exact code/input hashes, and review outcomes. Next action: finish run-001 evidence and human feedback. Broader rig coverage, binary hosting, export format and licensing of contributed code/data remain open. The proposed six-family 3/2/1 split is a pilot proposal, not established evaluation coverage.
 
 ## Decisions
 
-- User reviewed the starting scene and scenario instructions and accepted them on 2026-09-06 ("Ok I've reviewed them, looks good"). Treat the documented schedule and initial measurement limits as the baseline for the first attempt. This accepts the test, not generator implementation. Prepare the file-level plan and await code-scope approval before implementation.
-- User requires whole-body physics. The spec and GEN-02 now require coverage of pelvis, torso, neck/head, both arms/hands, and both legs/feet, with fingers/toes following the simulated body. Individual finger/toe articulation and exact bone-to-body mapping remain design details; do not assume every helper/end bone needs its own rigid body. This is a scope clarification, not implementation approval.
-- User selected blending by default. Updated docs/first-tool.md and GEN-04 in docs/acceptance.md to describe continuous animation-to-physics influence. This specifies control behavior, not an initial numeric value, automatic keyframe creation, or an implementation architecture. No tool code has been written.
-
-- User requested incremental commits and pushes to the current branch, with descriptions of completed work. AGENTS.md now records this standing workflow authorization, while retaining dedicated feature branches and explicit merge approval. The initial checkpoint covers the accumulated project planning/specification, rig provenance, work log, and instruction edits; ignored work/ assets remain local.
-- User selected Quaternius Animated Human Low Poly as the first development rig. Respect the user-cleaned layout under ignored work/rig-001: Animated Human.blend and Textures/. Keep provenance in docs/rig-source.md while binary distribution/storage remains undecided; do not restore the removed archive hierarchy or preview. Inspect without saving over the source; this selection does not authorize add-on code changes.
-- Prioritize dataset design and use the confirmed Blender-only ragdoll generator as the first tool. Do not infer supported rigs, physics behavior, or an interface before design establishes them.
-- The supplied prior conversation includes the user's general code-change approval preference: restate the request, explain proposed changes and why, and obtain explicit approval before implementation or code changes. The current AGENTS.md lost the explicit gate when its Unity-specific section was removed; preserve the general preference during this discussion and reconcile its wording before code work.
-- A manually authored, user-reviewed reference ragdoll, paired starting/result files, a simulation recording, and an acceptance checklist were proposed in the prior conversation. These remain proposals, not approved implementation scope. The user has now specified starting from an existing rig.
-- Baking the simulated motion onto the selected rig for export is part of the required outcome. A simulation-only demonstration is insufficient; exact animation-control and export criteria still need agreement.
-- User interface requirement: a sidebar tab with Generate Ragdoll and Bake simulation buttons, as specified in docs/first-tool.md. Generation must not automatically bake the animation.
-- At the user's request, remove Unity-specific instructions from `AGENTS.md` while retaining general project continuity, Git, architecture, dependency, and verification rules. This instruction cleanup does not replace the project goals in the README.
-- Use this file as curated coordination state; canonical documents and observed evidence remain authoritative as specified in `AGENTS.md`.
+- User accepted scenario-001 and initial limits, then explicitly approved the file-level generator plan. Scope approval is not acceptance of generated motion. Keep the original scene and numerical tolerances intact; proposed setting changes need review because the approved plan requires preserving floor/world settings.
+- Continuous blend is the default: 0 animation, 1 physics, initially 0 without generated keys. Scenario keys are test data. Native drivers, pose constraints and an independent animation reference implement the approved binding; no custom solver or frame handler.
+- Whole-body coverage uses 20 physical bodies. The other 21 finger/toe/end bones follow their nearest physical ancestor; individual digit articulation is deferred. See the mapping and architecture for current joint restrictions.
+- Original source action content, mesh, weights and rest structure remain intact. The visible rig gets an editable action copy and pose constraints. Baking remains separate and unavailable in this increment.
+- User selected the CC0 Quaternius rig and cleaned `work/rig-001`. Do not restore removed archives or overwrite the user-fixed source. Frozen scenario binaries and generated artifacts remain local under ignored `work/`; hashes and reports are tracked.
+- User requires incremental descriptive commits and pushes to the feature branch. No merge into main without explicit request. General code-scope approval preference remains applicable for future substantial changes; this generator scope is already approved.
 
 ## Known failures and risks
 
-- User corrected the material texture path; read-only inspection confirmed it resolves. One older dark-skin image datablock remains unresolved but is not used by the inspected material. Current scene hash and evidence are recorded in docs/rig-source.md; previous unchanged-source hash is historical. Baseline animation has now been sampled across 240 frames and spot-checked in scenario previews; the user has now reviewed and accepted the starting scene.
-
-- The tool scope document now contains the user's requirements. The demonstration template remains empty, and detailed acceptance criteria are still pending.
-- `AGENTS.md` references `Docs/Architecture.md`, but no architecture document currently exists. Establish the relevant design before changing system responsibilities.
-- Code and dataset licensing remain undecided; follow the contribution restrictions in the README and CONTRIBUTING document before external contributions or asset distribution.
+- Accepted 10/20 settings fail the full run: maximum physics tracking error 4.704 mm (limit 1 mm), collider floor penetration 12.389 mm (limit 10 mm), final-window linear speed 0.1002 m/s (limit 0.05), angular speed 1.1038 rad/s (limit 0.1). See run-001/result.json. Higher-accuracy settings are a diagnostic, not permission to alter the accepted fixture.
+- Initial same-session animated blend drivers left bodies kinematic. Declaring an empty blend FCurve in an output action copy before creating dependent drivers fixed release. Preserve this dependency-order lesson; initial-result.json retains negative evidence.
+- Volume-based masses made short connector bodies too light to support the head. Balanced segment weights and fitted convex hulls improved behavior. Increasing local joint iteration overrides was not sufficient and could worsen contact; overrides are now disabled. Do not repeat blind local-iteration tuning.
+- Spot review found feet intersecting the floor during the blend, including diagnostic frame 36. Human review must assess this defect, blend continuity and anatomical plausibility. Collider penetration checks do not measure skinned-mesh intersections. Symmetric first-rig joint limits are approximate; upper-leg rotation is currently restrictive. UI undo and installation were not tested. Both saved scenes reproduced all 240 body-position/release samples after reopening; the six-file archive passed syntax compilation.
+- Bake/export, broader rigs, automatic removal/rebuild, and reverse-transition quality are not implemented/validated. Licensing and distribution decisions remain outstanding; see README/CONTRIBUTING.
 
 ## Ordered next work
 
-Immediate checkpoint: obtain code-scope approval for docs/generator-plan.md. The user accepted scenario-001 and its initial limits; planned run-001 is opened with implementation still not started. The proposal uses 20 bodies, 19 joints, a separate animation reference, and keyable constraint blending. After approval, create a dedicated generator branch from the reviewed scenario checkpoint. Baking remains a separate subsequent task. The first implementation attempt has not started.
-
-1. Review [docs/dataset-structure.md](docs/dataset-structure.md), now containing the proposed repository layout and capture process. Start with one complete example; the proposed next pilot is six independent rig families split 3/2/1 across training/validation/test. These counts and folders are proposals, not approved implementation or evidence of reliability. Reference construction can be collaborative; held-out solutions must be outside the evaluated workspace.
-2. Resolve approval of the proposed body mapping, constraint-based binding, and file-level generator scope in docs/generator-plan.md. Do not infer code approval from acceptance of the scenario.
-3. Reconcile the README and scope document with the agreed dataset-first objective; define the smallest tool workflow and acceptance checks.
-4. Fill `templates/workflow.md` with the reproducibility and validation fields, including starting inputs, instructions, reviewed outcomes, corrections, and evidence. Include task IDs, asset-family IDs, exact environment and code revision, review status, and links to evidence. Record code-development examples as well as resulting Blender scenes.
-5. Complete and independently reproduce one pilot example before expanding the collection. Proposed pilot: add a ragdoll to one agreed rig, exercise the agreed keyable control, explicitly bake through the separate button, and verify independent animation playback and the agreed export result.
-6. After scope is established, begin implementation on a dedicated feature branch and retain observed validation evidence.
-
-These are pending planning steps, not authorization to start implementation.
+1. Complete the implementation checkpoint with reports, generated scenes, playback and package; commit and push with validation failures disclosed.
+2. Review the proposed 30-substep/100-iteration scenario revision and visual motion. Preserve the original input and thresholds; approval would authorize a distinct input revision, then a fresh accepted run. Do not label the diagnostic an accepted example.
+3. Resolve generator failures and concrete human feedback within approved scope; obtain new scope approval for material changes. Finish one accepted generator example.
+4. Define and implement the separate bake task with action naming, frame range, independent playback and export/reimport criteria.
+5. Complete reproducibility/template and storage decisions before scaling the dataset. Keep related asset-family variants together and held-out solutions outside the evaluated assistant workspace.
 
 ## Integrated checkpoints
 
-- Scenario acceptance: user reviewed the scene/instructions and approved them on 2026-09-06. Recorded acceptance in task metadata and scenario.md, preserving the user edit from metre to meter. Opened run-001 as awaiting code approval and authored docs/generator-plan.md. No implementation files have been created.
-
-- Scenario-001 prepared: local input scene, task metadata, source/input hashes, fixed animation/floor settings, and documented run procedure. Blender 5.1.2 fresh-load checks passed; all 240 baseline frames had finite geometry and no floor intersection. Seven pose samples and hashes retained; frames 1/120 visually inspected. No ragdoll exists yet. See dataset/tasks/task-0001/evidence/. Binary input remains local pending a storage decision.
-
-- Rig sourcing: found and downloaded a CC0 humanoid Blender source from its creator, checked its included license, and observed a successful read-only load/data inventory in Blender 5.1.2. See docs/rig-source.md for provenance, limitations, and pending visual checks.
-- Instruction cleanup: removed Unity-specific sections and references from `AGENTS.md`; a text search found no remaining Unity references. General project rules were retained.
-- Initial continuity record: created this work log from the current README, contribution guidance, repository inventory, and observed working-tree state. Confirmed that the scope document and workflow template are empty. Documentation-only work; no build or behavioral tests were run.
-- Prior-chat reconciliation: confirmed the user's dataset/community objective, Blender-only ragdoll tool choice, and general code-approval preference. Retained earlier assistant suggestions as proposals rather than accepted requirements.
-- User spec review: read the additions to docs/first-tool.md and synchronized this log. Confirmed sidebar placement and the two named buttons. No specification or implementation files were changed during the review.
+- Approved generator implementation scope on 2026-09-06; code and run evidence are on `codex/generate-ragdoll`. Generation/source-preservation/rollback/release checks pass, but the accepted simulation fails; this is a development checkpoint, not completed acceptance.
+- Scenario accepted on 2026-09-06 at `159e062`: frozen input, procedure, baseline animation checks, packed textures and hashes; user reviewed the scene/instructions. Source and frozen input remain unchanged.
+- Initial planning and rig provenance were committed/pushed as `11d7ee6`; the source is Quaternius Animated Human Low Poly (CC0). See docs/rig-source.md.
+- AGENTS.md was cleaned of Unity-specific guidance and given durable work-log and incremental Git requirements. The project remains Blender-only.

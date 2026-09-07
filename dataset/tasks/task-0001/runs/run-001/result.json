@@ -1,0 +1,47 @@
+{
+  "status": "failed",
+  "checks": {
+    "generation": true,
+    "late_failure_rollback": true,
+    "invalid_selection_unchanged": true,
+    "duplicate_generation_unchanged": true,
+    "generation_preserves_source_content": true,
+    "original_actions_preserved_after_control_keys": true,
+    "unrelated_objects_unchanged": true,
+    "world_settings_preserved": true,
+    "coverage": true,
+    "finite": true,
+    "animation_endpoint": true,
+    "physics_endpoint": false,
+    "joint_separation": true,
+    "floor_penetration": false,
+    "settling": false,
+    "blend_schedule": true,
+    "release_schedule": true
+  },
+  "worst": {
+    "animation_position_m": 4.782901360304366e-07,
+    "animation_rotation_rad": 0.0,
+    "physics_position_m": 0.004703577834134643,
+    "physics_rotation_rad": 0.0,
+    "joint_separation_m": 0.004942716539067632,
+    "floor_penetration_m": 0.012389140203595161,
+    "settling_linear_m_s": 0.10023786961593692,
+    "settling_angular_rad_s": 1.1038285195827484
+  },
+  "sampled_frames": 240,
+  "human_motion_review": "pending",
+  "continuous_transition_review": "pending",
+  "blender_version": "5.1.2",
+  "diagnostic_only": false,
+  "input_sha256": "5a01b42be88a50998a66753a0e0d2eb63f30509cbbd6f94a4f38a0ad234e1851",
+  "code_sha256": {
+    "addon/ragdoll_lab/__init__.py": "268712d778f4c5d0d59a4340b0f855665d43617143580f8a605580ba3225313c",
+    "addon/ragdoll_lab/binding.py": "2aed4cc739e8dcd34adf9b10b5a63c33470856da798e1acc9c9f9561df74331f",
+    "addon/ragdoll_lab/generate.py": "78d32acd78b0c5a85373bbd2667cdac3d1c3b01964bbacd58fe7bca995ddbe3c",
+    "addon/ragdoll_lab/mapping.py": "e9cb46f6c9dd1eafbdcafe1c9b30b5f0332ac31c30ec7d4ca01cad7888aa8f70",
+    "addon/ragdoll_lab/panel.py": "f3360105319c125bd8f47c280156670b466d577a5d6e1204e0c224bf2a7b30aa",
+    "addon/ragdoll_lab/physics.py": "59175109635b7959fa3856efb1bf90508ad310fb91060d3c42f662fefb016612"
+  },
+  "runner_sha256": "7fd5455e4a11256e5d3b9d53ddbfd325fd7f5fd2892f0a435f887af1514709ea"
+}

@@ -1,0 +1,152 @@
+{
+  "record_version": 1,
+  "storage": "local_ignored_work_directory",
+  "published_binaries": false,
+  "artifacts": [
+    {
+      "path": "work/scenarios/scenario-001/start.blend",
+      "bytes": 2828049,
+      "sha256": "5a01b42be88a50998a66753a0e0d2eb63f30509cbbd6f94a4f38a0ad234e1851"
+    },
+    {
+      "path": "work/rig-001/Animated Human.blend",
+      "bytes": 19765966,
+      "sha256": "ad782eab2d24f03e24a44415a958b3324c0e1442e90636b524361abbcf615d08"
+    },
+    {
+      "path": "work/builds/ragdoll_lab-0.1.0.zip",
+      "bytes": 7872,
+      "sha256": "7721acb591b3f6dd5aa14b4b6bf04a6ceb5a8456164a07ef01e35694d475b3c7"
+    },
+    {
+      "path": "work/verify-generated.py",
+      "bytes": 1713,
+      "sha256": "e43c0ec3d1964abd593af4ffedfb0bdf7b2b02efb018df78e8ccde8599c3db82"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/frame-001.png",
+      "bytes": 80450,
+      "sha256": "037a053794dead85b74e77f933bd7fc97c5cad4002baf86865e5336053e58b70"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/frame-024.png",
+      "bytes": 81080,
+      "sha256": "d60c4e37b54a84222eea07d7680a114662e49aad8a79a72c024629b57f3f226b"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/frame-036.png",
+      "bytes": 67625,
+      "sha256": "503a90c73a1689ac12d3c4e2ab78a0f791a4f1bc9f5d628f32c9227872e64520"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/frame-048.png",
+      "bytes": 65330,
+      "sha256": "5204cdf28ebc489cfed715168c79add4033456a9c22b365122b474917225c7f3"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/frame-096.png",
+      "bytes": 72322,
+      "sha256": "27aa88d90e5bf3cf32dfda6d73fca37f07f36fa428854a2650cd7fa8cb0c4466"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/frame-193.png",
+      "bytes": 61961,
+      "sha256": "cc0038a8935aef444b1f6e46e2441db6f5de4982a1d2b8deed3228b28beea71f"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/frame-240.png",
+      "bytes": 62661,
+      "sha256": "c82a7b9b7dfd00b933b7a783e33d9de117eb914d3520bf76d231e1cad45cdfd2"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/frames.json",
+      "bytes": 1234913,
+      "sha256": "679044e89aa42cd53fc331c609d6f9ad9124478482d8bc1821f9b4dc8bf4890a"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/fresh-load.json",
+      "bytes": 555,
+      "sha256": "db9536b7b475547583938583ba5232bda3b0a05f0230e554ff4b73fb1aceb318"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/generated.blend",
+      "bytes": 3980722,
+      "sha256": "e039e41c3975312379c77154c95531b2aee5c4c9c171d57ee9de54a71433adc9"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/inventory.json",
+      "bytes": 7030,
+      "sha256": "7b9b90298d4311291c2a9e547238e8e08bb16ed9523dde65240c4679a20b2269"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/playback.mp4",
+      "bytes": 416633,
+      "sha256": "86324ea516968697637c77dcd53a341d3e27031265934be951f4970211e45731"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/result.json",
+      "bytes": 2032,
+      "sha256": "e8c8c71aeb2a057f0e1007b85012469dc3b3a1bfb7badb627fe58cfb08f87bf6"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/diagnostic-high-accuracy/frame-001.png",
+      "bytes": 80475,
+      "sha256": "ea9e746fc68903f89ca9f72332159c61073863c7c4b89fd34408f9d14293df39"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/diagnostic-high-accuracy/frame-024.png",
+      "bytes": 81105,
+      "sha256": "6cb7f02cd26577c8f740c866b96b026c881bffe7875469d997daa774a9805696"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/diagnostic-high-accuracy/frame-036.png",
+      "bytes": 66278,
+      "sha256": "61652eec1a1e406dee13b27719189fadad16b55c5f0d66756bdfd9b896075a54"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/diagnostic-high-accuracy/frame-048.png",
+      "bytes": 64295,
+      "sha256": "168373ba5a7ef35bff4d4a546b2578e9846c2c1da7adc965ec1d3f0195dcf70b"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/diagnostic-high-accuracy/frame-096.png",
+      "bytes": 64478,
+      "sha256": "5451c29ca1afa55b9d112ee2cb71d2c3027448ce985fdaa820028da63333aeef"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/diagnostic-high-accuracy/frame-193.png",
+      "bytes": 64921,
+      "sha256": "444a284b5d7b64e9d7270b22f8834bbae90cf99e2000f3d1e69d905583662a42"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/diagnostic-high-accuracy/frame-240.png",
+      "bytes": 64963,
+      "sha256": "ad0ba201d1a03875fecc44d1f9bcf40072c1fd4e6ea25219bb71afcc02cb3364"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/diagnostic-high-accuracy/frames.json",
+      "bytes": 1162693,
+      "sha256": "8ecfac1cf7c1f862c15be31d074ebd73c607287a711d9c78dc416e49a2d313c4"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/diagnostic-high-accuracy/generated.blend",
+      "bytes": 3980713,
+      "sha256": "afd4f6ad8ac8993dc987269f7ef7f70de7963b43176aab3353a86fbf2f6f4b7c"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/diagnostic-high-accuracy/inventory.json",
+      "bytes": 7030,
+      "sha256": "7b9b90298d4311291c2a9e547238e8e08bb16ed9523dde65240c4679a20b2269"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/diagnostic-high-accuracy/playback.mp4",
+      "bytes": 310074,
+      "sha256": "00dd1ffaeddc46e2904bd2d5b9b96a1b45c93ab048414be39d451480d97bc26b"
+    },
+    {
+      "path": "work/runs/task-0001/run-001/diagnostic-high-accuracy/result.json",
+      "bytes": 1991,
+      "sha256": "38b1828efc883488836c9d50e509c9ee4bf243c1433fac808534881e4d2186bb"
+    }
+  ]
+}
