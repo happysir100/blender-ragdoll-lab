@@ -12,7 +12,7 @@ Success belongs to the tool: reproduce the result from the recorded input using 
 
 Before the first attempt, record the exact starting scene hash, Blender version, initial pose/action, scale, gravity, collision floor, simulation settings, frame rate, frame range, and control keyframes. Any floor setup is an explicit test fixture, not an implied responsibility of the generator.
 
-Proposed first scenario: the character begins in the agreed pose above a floor, physics takes over at an agreed frame, and the character falls and settles. An existing-animation-to-physics scenario checks preservation and transfer separately. Switching versus blending and the detailed frame schedule remain undecided.
+Proposed first scenario: the character begins in the agreed pose above a floor, physics takes over at an agreed frame, and the character falls and settles. An existing-animation-to-physics scenario checks preservation and transfer separately. The user selected continuous blending as the default control. Use 0 for animation, 1 for full ragdoll, and intermediate values for mixed influence. The initial value, detailed frame schedule, and interpolation remain to be defined.
 
 ## Proposed checks
 
@@ -21,7 +21,7 @@ Proposed first scenario: the character begins in the agreed pose above a floor, 
 | GEN-01 | The sidebar exposes Generate Ragdoll, operating on the selected supported rig without an execution error. | Recorded steps, UI capture, and tool output. |
 | GEN-02 | Every agreed major body segment receives the intended collision body and joint connections. Helper, end, and finger/toe bones follow an explicit inclusion/exclusion mapping. | Generated object and joint inventory compared with the agreed mapping. |
 | GEN-03 | Simulated bodies drive the intended bones and visible mesh; no body part remains unintentionally fixed or detached. | Evaluated bone/body transforms and recorded playback. |
-| GEN-04 | The rig's keyable control behaves as specified before, during, and after the agreed transition. | Keyframe values and playback around transition frames. Pending switching/blending decision. |
+| GEN-04 | The rig's keyable blend preserves animation at 0, follows ragdoll physics at 1, and produces a continuous transition at intermediate values without an unintended pose jump. | Compare endpoint poses with animation and physics outputs, sample intermediate blend values, and review playback across the transition. Agree tolerances and keyframe schedule before grading. |
 | GEN-05 | In the agreed floor scenario, the character falls, makes contact, and settles without sustained jitter, joint separation, non-finite transforms, or unexplained explosive motion. | Full-window playback and measured motion/joint/contact checks. Numerical tolerances remain to be agreed. |
 | GEN-06 | The character's mesh, weights, existing action data, and unrelated scene objects remain intact; intended rig modifications are documented. | Before/after inventory and comparison, plus existing-animation playback with physics disabled. |
 | GEN-07 | Generated bodies and joints are named and organized so the user can inspect and adjust them. | User review against recorded naming/organization preferences. |
