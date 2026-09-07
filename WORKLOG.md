@@ -35,6 +35,7 @@ Planning documentation and agent instructions were committed as 11d7ee6 and succ
 
 ## Decisions
 
+- User requires whole-body physics. The spec and GEN-02 now require coverage of pelvis, torso, neck/head, both arms/hands, and both legs/feet, with fingers/toes following the simulated body. Individual finger/toe articulation and exact bone-to-body mapping remain design details; do not assume every helper/end bone needs its own rigid body. This is a scope clarification, not implementation approval.
 - User selected blending by default. Updated docs/first-tool.md and GEN-04 in docs/acceptance.md to describe continuous animation-to-physics influence. This specifies control behavior, not an initial numeric value, automatic keyframe creation, or an implementation architecture. No tool code has been written.
 
 - User requested incremental commits and pushes to the current branch, with descriptions of completed work. AGENTS.md now records this standing workflow authorization, while retaining dedicated feature branches and explicit merge approval. The initial checkpoint covers the accumulated project planning/specification, rig provenance, work log, and instruction edits; ignored work/ assets remain local.
