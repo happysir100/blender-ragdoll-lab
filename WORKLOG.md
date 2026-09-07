@@ -12,8 +12,8 @@ Canonical references: [tool specification](docs/first-tool.md), [approved genera
 
 ## Active workstreams
 
-- Generator implementation and validation — owner: primary assistant; status: validating; may edit the approved six add-on modules, scenario runner, supporting documentation and run evidence. Branch: `codex/generate-ragdoll`, based on accepted scenario checkpoint `159e06245954dfa560c9ffca144054e1f2a68524`. Implemented 20 bodies, 19 joints, 41 bone targets, keyable blend, duplicate/invalid-input rejection and failure rollback. Accepted fixture at 10 substeps/20 solver iterations fails tracking, penetration and settling. A separate 30/100 diagnostic passes measured limits; it is not an accepted-scenario pass. Next checkpoint: retain final reports/playback, review visual behavior, and request approval before revising frozen scenario settings. No agents are delegated; no merge or dependency change is authorized.
-- Dataset capture — owner: primary assistant with user; status: active; may edit documentation and run records. Same branch. Preserve failed experiments, exact code/input hashes, and review outcomes. Next action: finish run-001 evidence and human feedback. Broader rig coverage, binary hosting, export format and licensing of contributed code/data remain open. The proposed six-family 3/2/1 split is a pilot proposal, not established evaluation coverage.
+- Generator implementation and validation — owner: primary assistant; status: validating; may edit the approved six add-on modules, scenario runner, supporting documentation and run evidence. Branch: `codex/generate-ragdoll`, based on accepted scenario checkpoint `159e06245954dfa560c9ffca144054e1f2a68524`. Implemented 20 bodies, 19 joints, 41 bone targets, keyable blend, duplicate/invalid-input rejection and failure rollback. Accepted fixture at 10 substeps/20 solver iterations fails tracking, penetration and settling. A separate 30/100 diagnostic passes measured limits; it is not an accepted-scenario pass. Latest durable checkpoint: b391d13, pushed to origin/codex/generate-ragdoll with reports, playback hashes and package evidence. Next action: review visual behavior and obtain approval before revising frozen scenario settings. No agents are delegated; no merge or dependency change is authorized.
+- Dataset capture — owner: primary assistant with user; status: active; may edit documentation and run records. Same branch. Preserve failed experiments, exact code/input hashes, and review outcomes. Run-001 evidence is retained and pushed; next action: capture human feedback. Broader rig coverage, binary hosting, export format and licensing of contributed code/data remain open. The proposed six-family 3/2/1 split is a pilot proposal, not established evaluation coverage.
 
 ## Decisions
 
@@ -34,7 +34,7 @@ Canonical references: [tool specification](docs/first-tool.md), [approved genera
 
 ## Ordered next work
 
-1. Complete the implementation checkpoint with reports, generated scenes, playback and package; commit and push with validation failures disclosed.
+1. Implementation checkpoint b391d13 is committed and pushed; proceed to review the recorded results and proposed fixture revision.
 2. Review the proposed 30-substep/100-iteration scenario revision and visual motion. Preserve the original input and thresholds; approval would authorize a distinct input revision, then a fresh accepted run. Do not label the diagnostic an accepted example.
 3. Resolve generator failures and concrete human feedback within approved scope; obtain new scope approval for material changes. Finish one accepted generator example.
 4. Define and implement the separate bake task with action naming, frame range, independent playback and export/reimport criteria.
@@ -42,7 +42,7 @@ Canonical references: [tool specification](docs/first-tool.md), [approved genera
 
 ## Integrated checkpoints
 
-- Approved generator implementation scope on 2026-09-06; code and run evidence are on `codex/generate-ragdoll`. Generation/source-preservation/rollback/release checks pass, but the accepted simulation fails; this is a development checkpoint, not completed acceptance.
+- Approved generator implementation scope on 2026-09-06; code and run evidence were committed and pushed as `b391d13` on `codex/generate-ragdoll`. Generation/source-preservation/rollback/release checks pass, but the accepted simulation fails; this is a development checkpoint, not completed acceptance.
 - Scenario accepted on 2026-09-06 at `159e062`: frozen input, procedure, baseline animation checks, packed textures and hashes; user reviewed the scene/instructions. Source and frozen input remain unchanged.
 - Initial planning and rig provenance were committed/pushed as `11d7ee6`; the source is Quaternius Animated Human Low Poly (CC0). See docs/rig-source.md.
 - AGENTS.md was cleaned of Unity-specific guidance and given durable work-log and incremental Git requirements. The project remains Blender-only.
