@@ -21,14 +21,15 @@ Canonical references:
 - [README.md](README.md): project objective, goals, and data handling.
 - [CONTRIBUTING.md](CONTRIBUTING.md): contribution and example quality requirements.
 - [docs/first-tool.md](docs/first-tool.md): user-authored tool specification, including sidebar placement, generation, keyable rig control, and separate baking.
+- [docs/acceptance.md](docs/acceptance.md): proposed first-task success criteria, evidence requirements, and outstanding decisions; not yet approved or executed.
 - [templates/workflow.md](templates/workflow.md): intended demonstration template; currently empty.
 - [AGENTS.md](AGENTS.md): agent workflow instructions.
 - [docs/dataset-structure.md](docs/dataset-structure.md): proposed repository layout, record contents, pilot size, review process, and held-out evaluation boundaries.
 
 ## Active workstreams
 
-- Rig preparation — owner: primary assistant; status: planned; editing boundary: source/provenance and local asset preparation, no add-on code. User selected Quaternius Animated Human Low Poly. User cleaned work/rig-001 to Animated Human.blend and Textures/. The current scene hash matches the downloaded source. The original archive, license file, and preview are no longer in this folder; provenance remains in docs/rig-source.md. A neutral rest-pose preview was previously inspected in Blender 5.1.2. Evidence and archive hash: [docs/rig-source.md](docs/rig-source.md). Next action: check animated deformation, resolve two texture references in a working copy, and establish the canonical task input. Legacy conversion warnings occurred. No binary assets were added to Git and no source scene was saved.
-- Goal and dataset definition — owner: primary assistant with user; status: active; editing boundary: continuity documentation only during discussion, no implementation. Branch: `main`. Latest checkpoint: user specified selected-rig input, keyable ragdoll simulation, and baking onto the rig for animation export. Next action: clarify keyable control and choose the first representative rig and expected-result criteria. Unverified assumptions: training mechanism, supported rig types, switching versus blending, and export requirements. No delegated work is active.
+- Rig preparation — owner: primary assistant; status: planned; editing boundary: source/provenance and local asset preparation, no add-on code. User selected Quaternius Animated Human Low Poly. User cleaned work/rig-001 to Animated Human.blend and Textures/. The scene now includes the user texture fix; the current hash and inspection are recorded in docs/rig-source.md. The original archive, license file, and preview are no longer in this folder; provenance remains in docs/rig-source.md. A neutral rest-pose preview was previously inspected in Blender 5.1.2. Evidence and archive hash: [docs/rig-source.md](docs/rig-source.md). Next action: check animated deformation and establish the canonical task input. The material texture resolves; one older image datablock remains unresolved. Legacy conversion warnings occurred. No binary assets were added to Git and no source scene was saved.
+- Goal and dataset definition — owner: primary assistant with user; status: active; editing boundary: continuity documentation only during discussion, no implementation. Branch: `main`. Latest checkpoint: user specified selected-rig input, keyable ragdoll simulation, and baking onto the rig for animation export. Next action: review docs/acceptance.md and clarify keyable control for the selected rig. Unverified assumptions: training mechanism, supported rig types, switching versus blending, and export requirements. No delegated work is active.
 
 Planning documentation and agent instructions were committed as 11d7ee6 and successfully pushed to origin/main. The checkpoint includes the accumulated specification, dataset plan, rig provenance, and work log. Binary assets under work/ remain local and ignored.
 
@@ -46,13 +47,15 @@ Planning documentation and agent instructions were committed as 11d7ee6 and succ
 
 ## Known failures and risks
 
+- User corrected the material texture path; read-only inspection confirmed it resolves. One older dark-skin image datablock remains unresolved but is not used by the inspected material. Current scene hash and evidence are recorded in docs/rig-source.md; previous unchanged-source hash is historical. Animated deformation remains unchecked.
+
 - The tool scope document now contains the user's requirements. The demonstration template remains empty, and detailed acceptance criteria are still pending.
 - `AGENTS.md` references `Docs/Architecture.md`, but no architecture document currently exists. Establish the relevant design before changing system responsibilities.
 - Code and dataset licensing remain undecided; follow the contribution restrictions in the README and CONTRIBUTING document before external contributions or asset distribution.
 
 ## Ordered next work
 
-Immediate proposed checkpoint: define and record the first code-development task (Generate Ragdoll on the selected rig), its untouched input, and observable success checks before implementation. Clarify whether keyable control means an on/off switch, blending, or both. Baking remains required as a separate subsequent development task. Prepare the input and capture record before starting the first attempt; obtain approval for a concrete file-level code plan.
+Immediate proposed checkpoint: review docs/acceptance.md for the first code-development task (Generate Ragdoll on the selected rig), freeze the user-corrected input, and agree observable success checks before implementation. Clarify whether keyable control means an on/off switch, blending, or both. Baking remains required as a separate subsequent development task. Prepare the input and capture record before starting the first attempt; obtain approval for a concrete file-level code plan.
 
 1. Review [docs/dataset-structure.md](docs/dataset-structure.md), now containing the proposed repository layout and capture process. Start with one complete example; the proposed next pilot is six independent rig families split 3/2/1 across training/validation/test. These counts and folders are proposals, not approved implementation or evidence of reliability. Reference construction can be collaborative; held-out solutions must be outside the evaluated workspace.
 2. Clarify keyable simulation control and define successful simulation and baked-animation outcomes using the selected Quaternius rig; distinguish technical requirements, personal preferences, and project constraints.

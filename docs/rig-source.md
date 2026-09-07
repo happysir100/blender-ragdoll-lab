@@ -25,10 +25,12 @@ This verifies file loading and data inventory only, not visual deformation, anim
 
 ## Next checkpoint
 
+User texture update, verified 2026-09-06: the material Texture references ClothedLightSkin.png at //Textures\\ClothedLightSkin.png, which resolves to an existing file. An additional ClothedDarkSkin.png image datablock still references a missing file, but is not referenced by the inspected material's image nodes. Current user-edited scene SHA-256: AD782EAB2D24F03E24A44415A958B3324C0E1442E90636B524361ABBCF615D08. The earlier unchanged-source hash below is historical, not the current scene hash. Playback remains unverified.
+
 The user simplified the local folder to work/rig-001/Animated Human.blend and work/rig-001/Textures/. The original.zip, original/ hierarchy, license file, and preview are no longer present in this folder. Do not recreate that layout. Source URL, license identification, and original archive hash remain recorded above. Files under work/ remain ignored by Git pending a binary distribution decision. The current scene was hash-compared against the downloaded source and is unchanged: SHA-256 6FFDF7B8A269C7D214C7775C01808B2CD6E780C8FB44B8FA3A3ABB03858487F7.
 
 A neutral, untextured rest-pose preview was previously rendered and visually inspected; that preview was removed during the user cleanup. The character is visible with an intact humanoid silhouette. Preview camera and display changes were made only in memory; the source .blend was not saved. This does not verify animation playback or physics behavior.
 
-Next: inspect animated deformation and prepare a separate working copy with resolved textures. Treat this rig as development material, not a held-out test asset.
+Next: inspect animated deformation and freeze the agreed starting scene for the first task. Treat this rig as development material, not a held-out test asset.
 
 Alternative reviewed: Quaternius Universal Base Characters, https://quaternius.itch.io/universal-base-characters. The creator lists CC0; the native .blend files are in its paid Source edition ($19.99 at inspection). The free Standard edition is a different package. No purchase was made.
