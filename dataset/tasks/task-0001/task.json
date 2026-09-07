@@ -1,0 +1,38 @@
+{
+  "record_version": 1,
+  "task_id": "task-0001",
+  "task_type": "code_development",
+  "title": "Generate a full-body ragdoll on rig-001",
+  "scenario_id": "scenario-001",
+  "asset_family_id": "quaternius-animated-human",
+  "split": "development",
+  "status": "input_prepared",
+  "implementation_status": "not_started",
+  "base_revision": "c18457f",
+  "specification": "docs/first-tool.md",
+  "acceptance": "docs/acceptance.md",
+  "scenario": "dataset/tasks/task-0001/scenario.md",
+  "input_manifest": "dataset/tasks/task-0001/input/manifest.json",
+  "blend_schedule": [
+    {
+      "value": 0,
+      "frame": 1
+    },
+    {
+      "value": 0,
+      "frame": 24
+    },
+    {
+      "value": 1,
+      "frame": 48
+    },
+    {
+      "value": 1,
+      "frame": 240
+    }
+  ],
+  "interpolation": "LINEAR",
+  "runs": [],
+  "user_acceptance": "pending_scenario_review",
+  "generator_result": "not_run"
+}

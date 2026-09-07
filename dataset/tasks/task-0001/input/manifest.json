@@ -1,0 +1,28 @@
+{
+  "manifest_version": 1,
+  "scenario_id": "scenario-001",
+  "asset_family_id": "quaternius-animated-human",
+  "asset_id": "rig-001",
+  "status": "local_input_prepared",
+  "storage": {
+    "kind": "ignored_local_file",
+    "repository_relative_path": "work/scenarios/scenario-001/start.blend",
+    "downloadable_url": null,
+    "sha256": "5a01b42be88a50998a66753a0e0d2eb63f30509cbbd6f94a4f38a0ad234e1851",
+    "bytes": 2828049,
+    "distribution_status": "pending_storage_decision"
+  },
+  "source": {
+    "repository_relative_path": "work/rig-001/Animated Human.blend",
+    "sha256": "ad782eab2d24f03e24a44415a958b3324c0e1442e90636b524361abbcf615d08",
+    "creator": "Quaternius",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/content/animated-human-low-poly",
+    "provenance": "docs/rig-source.md"
+  },
+  "environment": {
+    "blender_version": "5.1.2",
+    "additional_addons": [],
+    "textures": "packed"
+  }
+}

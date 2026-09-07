@@ -6,7 +6,7 @@ Status: proposal for review. No add-on, dataset schema, collection pipeline, or 
 
 Collect reviewed examples of developing a Blender ragdoll generator, including user preferences, approvals, corrections, and observed validation. Also retain Blender scenarios that test the resulting tool. Distinguish these two kinds of task in the dataset index.
 
-The tool takes an existing rig, adds a keyable ragdoll simulation, and offers a separate button to bake motion onto the rig for animation export. Keyable control semantics and supported rigs remain undecided.
+The tool takes an existing rig, adds a keyable ragdoll simulation, and offers a separate button to bake motion onto the rig for animation export. The user selected continuous blending and whole-body coverage; rig-001 is the first development input. Broader rig support remains undecided.
 
 ## Repository layout
 
@@ -57,7 +57,7 @@ releases/
   README.md                      Versioning and separate distribution packages
 ```
 
-The existing empty first-tool and workflow documents should be filled rather than duplicated. The folder tree is a target, not a request to create empty scaffolding. Script creation requires the user's code-change approval workflow.
+The first-tool specification is populated; the workflow template remains to be filled. The folder tree is a target, not a request to create empty scaffolding. The first prepared scenario and metadata live under dataset/tasks/task-0001; see dataset/README.md for the actual current collection and its local-only binary storage limitation. Script creation requires the user's code-change approval workflow.
 
 ## Task and run records
 

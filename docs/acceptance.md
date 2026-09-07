@@ -14,6 +14,8 @@ Before the first attempt, record the exact starting scene hash, Blender version,
 
 Proposed first scenario: the character begins in the agreed pose above a floor, physics takes over at an agreed frame, and the character falls and settles. An existing-animation-to-physics scenario checks preservation and transfer separately. The user selected continuous blending as the default control. Use 0 for animation, 1 for full ragdoll, and intermediate values for mixed influence. The initial value, detailed frame schedule, and interpolation remain to be defined.
 
+The first concrete development fixture is now [scenario-001](../dataset/tasks/task-0001/scenario.md): Idle animation at 24 fps, blend 0 through frame 24, a linear transition to 1 at frame 48, and observation through frame 240. These are test-scenario settings, not default keyframes automatically added by the product. Candidate numerical limits are documented there for review before the first generator run.
+
 ## Proposed checks
 
 | ID | Expected outcome | Evidence |

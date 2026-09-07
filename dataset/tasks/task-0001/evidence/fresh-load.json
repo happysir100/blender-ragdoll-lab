@@ -1,0 +1,41 @@
+{
+  "fresh_load": "passed",
+  "selected_rig": "Human Armature",
+  "action": "Idle",
+  "packed_images": [
+    "ClothedDarkSkin.png",
+    "ClothedLightSkin.png"
+  ],
+  "active_physics_bodies": 0,
+  "rigid_body_joints": 0,
+  "source_unchanged": true,
+  "frame_range": [
+    1,
+    240
+  ],
+  "fps": 24,
+  "gravity": [
+    0.0,
+    0.0,
+    -9.8100004196167
+  ],
+  "floor_dimensions": [
+    6.0,
+    6.0,
+    0.20000000298023224
+  ],
+  "floor_friction": 0.800000011920929,
+  "floor_restitution": 0.0,
+  "floor_margin_m": 0.0010000000474974513,
+  "substeps_per_frame": 10,
+  "solver_iterations": 20,
+  "baseline_pose_hashes": {
+    "1": "a80bf74c3467ccbc9e493319b22e8d9df45abfca655daa035be0b0db50e248f0",
+    "24": "42e660c5fecd7cc0f5597a711dbd457b7a1c95bc05346264d86e8057f8ab446f",
+    "36": "5da3c51e73948fd65dad2081350d5d763245df54cee9220ef909869a5e27756b",
+    "48": "22305e5e8c8d1d35368981d78c97be387d6d7bf05925809ab1b956c6a43c9191",
+    "120": "7022e517cf601f987414624d052602d63ad8b3038aecca7c995b5a8e846a4919",
+    "193": "0d546b0d38a78aa0992ec60795570b980960b3e1c01a55b0355515cd32f9d399",
+    "240": "1335def9bc3d9f80a5094a4a19f12112183b8f94900da1eb41b3e37390684ee0"
+  }
+}

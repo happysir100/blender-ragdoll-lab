@@ -6,7 +6,7 @@ Last reconciled: 2026-09-06 (America/New_York).
 
 The primary objective is to create training and validation data that captures effective workflows, the user's working preferences, and reviewed examples useful to the wider game-development community. Developing a Blender tool supplies the tasks and evidence for the dataset. The intended training mechanism remains unspecified; collecting examples does not itself retrain a model.
 
-The user-provided prior conversation confirms the first tool is a Blender-only ragdoll generator, consistent with [README.md](README.md). The repository is in its initial planning stage and contains no working add-on or training dataset.
+The user-provided prior conversation confirms the first tool is a Blender-only ragdoll generator, consistent with [README.md](README.md). The repository has a prepared first development scenario and metadata, but no working add-on or completed training examples.
 
 Confirmed tool workflow: the user selects an existing rig, adds a ragdoll physics simulation, keys its control over time, and bakes the simulation back onto the rig to produce exportable ragdoll animations. Creating a rig from an unrigged mesh is not part of the stated workflow.
 
@@ -28,8 +28,9 @@ Canonical references:
 
 ## Active workstreams
 
-- Rig preparation — owner: primary assistant; status: planned; editing boundary: source/provenance and local asset preparation, no add-on code. User selected Quaternius Animated Human Low Poly. User cleaned work/rig-001 to Animated Human.blend and Textures/. The scene now includes the user texture fix; the current hash and inspection are recorded in docs/rig-source.md. The original archive, license file, and preview are no longer in this folder; provenance remains in docs/rig-source.md. A neutral rest-pose preview was previously inspected in Blender 5.1.2. Evidence and archive hash: [docs/rig-source.md](docs/rig-source.md). Next action: check animated deformation and establish the canonical task input. The material texture resolves; one older image datablock remains unresolved. Legacy conversion warnings occurred. No binary assets were added to Git and no source scene was saved.
-- Goal and dataset definition — owner: primary assistant with user; status: active; editing boundary: continuity documentation only during discussion, no implementation. Branch: `main`. Latest checkpoint: user specified selected-rig input, keyable ragdoll simulation, and baking onto the rig for animation export. Next action: review the blend acceptance checks in docs/acceptance.md and agree a reproducible transition scenario. Unverified assumptions: training mechanism, supported rig types, blend timing/initial value, and export requirements. No delegated work is active.
+- First scenario preparation — completed on codex/first-test-scenario. Local start.blend is saved under work/scenarios/scenario-001; source rig-001 is unchanged. Metadata, procedure, and preparation evidence: dataset/tasks/task-0001/. All 240 baseline animation frames evaluated; fresh-load checks and two preview inspections passed. Packed both textures in the copy. Generator checks remain not run; numerical acceptance limits and user scene review are pending.
+- Rig preparation — source selection and first fixture preparation complete. User-cleaned work/rig-001 remains intact. The scenario copy includes packed textures, a 1.8 m placement parent, passive floor, and Idle baseline. See docs/rig-source.md for original provenance and dataset/tasks/task-0001/input/manifest.json for the frozen fixture hash. No further source edits are required for this scenario.
+- Goal and dataset definition — owner: primary assistant with user; status: active; may edit documentation only pending implementation approval; branch: codex/first-test-scenario. Latest checkpoint: first scenario input and task record prepared. Next action: user reviews the scene, scenario schedule, and candidate limits; then define a concrete generator implementation plan. Broader rig support, export format, finger/toe articulation, and binary distribution remain open. No delegated work is active.
 
 Planning documentation and agent instructions were committed as 11d7ee6 and successfully pushed to origin/main. The checkpoint includes the accumulated specification, dataset plan, rig provenance, and work log. Binary assets under work/ remain local and ignored.
 
@@ -50,7 +51,7 @@ Planning documentation and agent instructions were committed as 11d7ee6 and succ
 
 ## Known failures and risks
 
-- User corrected the material texture path; read-only inspection confirmed it resolves. One older dark-skin image datablock remains unresolved but is not used by the inspected material. Current scene hash and evidence are recorded in docs/rig-source.md; previous unchanged-source hash is historical. Animated deformation remains unchecked.
+- User corrected the material texture path; read-only inspection confirmed it resolves. One older dark-skin image datablock remains unresolved but is not used by the inspected material. Current scene hash and evidence are recorded in docs/rig-source.md; previous unchanged-source hash is historical. Baseline animation has now been sampled across 240 frames and spot-checked in scenario previews; full human playback review remains pending.
 
 - The tool scope document now contains the user's requirements. The demonstration template remains empty, and detailed acceptance criteria are still pending.
 - `AGENTS.md` references `Docs/Architecture.md`, but no architecture document currently exists. Establish the relevant design before changing system responsibilities.
@@ -58,10 +59,10 @@ Planning documentation and agent instructions were committed as 11d7ee6 and succ
 
 ## Ordered next work
 
-Immediate proposed checkpoint: review docs/acceptance.md for the first code-development task (Generate Ragdoll on the selected rig), freeze the user-corrected input, and agree observable success checks before implementation. Use the user-selected default blend control and agree its test keyframes and tolerances. Baking remains required as a separate subsequent development task. Prepare the input and capture record before starting the first attempt; obtain approval for a concrete file-level code plan.
+Immediate checkpoint: review dataset/tasks/task-0001/scenario.md and the prepared local scene. Its fixed schedule is blend 0 at frames 1/24 and blend 1 at 48/240 with linear interpolation, at 24 fps. Agree candidate measurement limits before grading, then obtain approval for a concrete generator code plan. Baking remains a separate subsequent task. The first implementation attempt has not started.
 
 1. Review [docs/dataset-structure.md](docs/dataset-structure.md), now containing the proposed repository layout and capture process. Start with one complete example; the proposed next pilot is six independent rig families split 3/2/1 across training/validation/test. These counts and folders are proposals, not approved implementation or evidence of reliability. Reference construction can be collaborative; held-out solutions must be outside the evaluated workspace.
-2. Define the blend transition scenario and successful simulation and baked-animation outcomes using the selected Quaternius rig; distinguish technical requirements, personal preferences, and project constraints.
+2. Review the prepared scenario and candidate limits; determine the exact full-body bone mapping and first generator implementation scope. The animation-to-physics schedule is now recorded.
 3. Reconcile the README and scope document with the agreed dataset-first objective; define the smallest tool workflow and acceptance checks.
 4. Fill `templates/workflow.md` with the reproducibility and validation fields, including starting inputs, instructions, reviewed outcomes, corrections, and evidence. Include task IDs, asset-family IDs, exact environment and code revision, review status, and links to evidence. Record code-development examples as well as resulting Blender scenes.
 5. Complete and independently reproduce one pilot example before expanding the collection. Proposed pilot: add a ragdoll to one agreed rig, exercise the agreed keyable control, explicitly bake through the separate button, and verify independent animation playback and the agreed export result.
@@ -70,6 +71,8 @@ Immediate proposed checkpoint: review docs/acceptance.md for the first code-deve
 These are pending planning steps, not authorization to start implementation.
 
 ## Integrated checkpoints
+
+- Scenario-001 prepared: local input scene, task metadata, source/input hashes, fixed animation/floor settings, and documented run procedure. Blender 5.1.2 fresh-load checks passed; all 240 baseline frames had finite geometry and no floor intersection. Seven pose samples and hashes retained; frames 1/120 visually inspected. No ragdoll exists yet. See dataset/tasks/task-0001/evidence/. Binary input remains local pending a storage decision.
 
 - Rig sourcing: found and downloaded a CC0 humanoid Blender source from its creator, checked its included license, and observed a successful read-only load/data inventory in Blender 5.1.2. See docs/rig-source.md for provenance, limitations, and pending visual checks.
 - Instruction cleanup: removed Unity-specific sections and references from `AGENTS.md`; a text search found no remaining Unity references. General project rules were retained.

@@ -21,6 +21,7 @@ This repository currently contains planning and example templates; it does not c
 - `docs/first-tool.md`: scope and open design decisions.
 - `templates/workflow.md`: reusable demonstration record.
 - `CONTRIBUTING.md`: example quality and contribution expectations.
+- `dataset/README.md`: current collection, including the first prepared ragdoll test scenario and its input manifest.
 
 ## Data handling
 
